@@ -1,7 +1,7 @@
 "use client";
-import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { ThemeToggle } from './ThemeToggle';
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,27 +12,27 @@ const Header = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' },
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#projects", label: "Projects" },
+    { href: "#contact", label: "Contact" },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-card' : 'bg-transparent'
+        isScrolled ? "glass-card" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
         <div className="text-2xl font-bold bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
-          UKR
+          HGk
         </div>
 
         {/* Desktop Navigation */}

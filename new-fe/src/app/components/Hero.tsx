@@ -1,9 +1,12 @@
-import { ArrowDown, Github, Linkedin, Mail, Code2 } from 'lucide-react';
-import Image from 'next/image';
+import { ArrowDown, Github, Linkedin, Mail, Code2 } from "lucide-react";
+import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
       {/* Animated Background Orbs */}
       <div className="floating-orb"></div>
       <div className="floating-orb"></div>
@@ -14,9 +17,9 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="order-2 lg:order-1">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-primary via-pink-400 to-cyan-400 bg-clip-text text-transparent">
-                Umair Rinde
+                Hammad Gazikhan
               </span>
             </h1>
 
@@ -25,30 +28,30 @@ const Hero = () => {
                 <Code2 className="w-6 h-6 mr-2 text-primary" />
                 <span className="font-mono">&lt;FullStackDeveloper /&gt;</span>
               </div>
-              <span className="block text-lg">Crafting digital experiences with clean code</span>
+              <span className="block text-lg">
+                Crafting digital experiences with clean code
+              </span>
             </div>
 
             {/* Social Links */}
             <div className="flex justify-center lg:justify-start space-x-6 mb-12">
               <a
-                href="https://github.com/Umair-Rinde"
-                target='_blank'
+                href="https://github.com/HammadGazikhan"
+                target="_blank"
                 className="glass-card p-3 rounded-full hover:scale-110 transition-all duration-300 group"
               >
                 <Github className="w-6 h-6 text-foreground/80 group-hover:text-foreground" />
               </a>
               <a
-                href="https://www.linkedin.com/in/umair-rinde-198024231/"
-                target='_blank'
-
+                href="https://www.linkedin.com/in/hammad-gazikhan-95b900254/"
+                target="_blank"
                 className="glass-card p-3 rounded-full hover:scale-110 transition-all duration-300 group"
               >
                 <Linkedin className="w-6 h-6 text-foreground/80 group-hover:text-foreground" />
               </a>
               <a
-                href="mailto:rindeumair@gmail.com"
-                target='_blank'
-
+                href="mailto:khanhammad9608@gmail.com"
+                target="_blank"
                 className="glass-card p-3 rounded-full hover:scale-110 transition-all duration-300 group"
               >
                 <Mail className="w-6 h-6 text-foreground/80 group-hover:text-foreground" />
@@ -84,7 +87,7 @@ const Hero = () => {
                     src="/profile.png"
                     width={400}
                     height={400}
-                    alt="Umair Rinde - Full Stack Developer"
+                    alt="Hammad Gazikhan - Full Stack Developer"
                     className="w-full h-full object-cover rounded-full"
                   />
 
@@ -97,8 +100,11 @@ const Hero = () => {
               <div className="absolute -top-4 -right-4 glass-card p-2 rounded-lg animate-float">
                 <Code2 className="w-6 h-6 text-primary" />
               </div>
-              <div className="absolute -bottom-4 -left-4 glass-card p-2 rounded-lg animate-float" style={{ animationDelay: '1s' }}>
-                <span className="text-primary font-mono text-sm">{'</>'}</span>
+              <div
+                className="absolute -bottom-4 -left-4 glass-card p-2 rounded-lg animate-float"
+                style={{ animationDelay: "1s" }}
+              >
+                <span className="text-primary font-mono text-sm">{"</>"}</span>
               </div>
             </div>
           </div>

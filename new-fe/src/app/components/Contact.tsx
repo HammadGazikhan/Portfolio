@@ -1,46 +1,58 @@
-'use client';
-import { useState } from 'react';
-import { Send, MapPin, Phone, Mail, Github, Linkedin, Instagram, Terminal, Coffee, Code } from 'lucide-react';
-import { useRef } from 'react';
-import emailjs from '@emailjs/browser';
-import toast from 'react-hot-toast';
+"use client";
+import { useState } from "react";
+import {
+  Send,
+  MapPin,
+  Phone,
+  Mail,
+  Github,
+  Linkedin,
+  Instagram,
+  Terminal,
+  Coffee,
+  Code,
+} from "lucide-react";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 const Contact = () => {
-    const formRef = useRef<HTMLFormElement | null>(null);
-    const [formData, setFormData] = useState({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     if (!formRef.current) return;
 
     emailjs
-  .sendForm(
-    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-    formRef.current,
-    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-  )
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
 
-  .then(
-    (result) => {
-      console.log('Email sent:', result.text);
-      toast.success('Message sent successfully!');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    },
-    (error) => {
-      console.error('Error sending email:', error.text);
-      toast.error('Failed to send message. Please try again.');
-    }
-  );
-  
+      .then(
+        (result) => {
+          console.log("Email sent:", result.text);
+          toast.success("Message sent successfully!");
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        },
+        (error) => {
+          console.error("Error sending email:", error.text);
+          toast.error("Failed to send message. Please try again.");
+        }
+      );
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -50,38 +62,53 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6" />,
-      label: 'Location',
-      value: 'Pune, India',
-      subtext: 'Available for remote, hybrid, or offline work.',
-        link:'https://www.google.com/maps/place/Pune', 
+      label: "Location",
+      value: "Pune, India",
+      subtext: "Available for remote, hybrid, or offline work.",
+      link: "https://www.google.com/maps/place/Pune",
     },
     {
       icon: <Mail className="w-6 h-6" />,
-      label: 'Email',
-      value: 'rindeumair@gmail.com',
-      subtext: 'Best way to reach me',
-        link:'mailto:rindeumair@gmail.com'
+      label: "Email",
+      value: "khanhammad9608@gmail.com",
+      subtext: "Best way to reach me",
+      link: "mailto:khanhammad9608@gmail.com",
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      label: 'Phone',
-      value: '+91 9359 343936',
-      subtext: 'Available 9AM - 9PM IST',
-        link:'tel:+919359343936'
+      label: "Phone",
+      value: "+91 9112 244286",
+      subtext: "Available 9AM - 9PM IST",
+      link: "tel:+919112244286",
     },
   ];
 
   const socialLinks = [
-    { icon: <Github className="w-6 h-6" />, href: 'https://github.com/Umair-Rinde', label: 'GitHub', handle: '@Umair-Rinde' },
-    { icon: <Linkedin className="w-6 h-6" />, href: 'https://www.linkedin.com/in/umair-rinde-198024231/', label: 'LinkedIn', handle: 'in/umair-rinde-198024231' },
-    { icon: <Instagram className="w-6 h-6" />, href: 'https://www.instagram.com/umair_rinde_313?igsh=MWdraTJmYnoyMnJ2eA==', label: 'Instagram', handle: '@umair_rinde_313' },
+    {
+      icon: <Github className="w-6 h-6" />,
+      href: "https://github.com/HammadGazikhan",
+      label: "GitHub",
+      handle: "@Hammad-Gazikhan",
+    },
+    {
+      icon: <Linkedin className="w-6 h-6" />,
+      href: "https://www.linkedin.com/in/hammad-gazikhan-95b900254/",
+      label: "LinkedIn",
+      handle: "in/hammad-gazikhan-95b900254/",
+    },
+    {
+      icon: <Instagram className="w-6 h-6" />,
+      href: "https://www.instagram.com/hammad_gazikhan/?igsh=OWlxeTVoNDExcjN1&utm_source=qr#",
+      label: "Instagram",
+      handle: "@hammad_gazikhan",
+    },
   ];
 
   const availability = [
-    { label: 'Full-time Opportunities', available: true },
-    { label: 'Freelance Projects', available: true },
-    { label: 'Technical Consulting', available: true },
-    { label: 'Code Reviews', available: false },
+    { label: "Full-time Opportunities", available: true },
+    { label: "Freelance Projects", available: true },
+    { label: "Technical Consulting", available: true },
+    { label: "Code Reviews", available: false },
   ];
 
   return (
@@ -94,7 +121,8 @@ const Contact = () => {
             </span>
           </h2>
           <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
-            Have a project in mind? Let&apos;s discuss how we can work together to bring your ideas to life.
+            Have a project in mind? Let&apos;s discuss how we can work together
+            to bring your ideas to life.
           </p>
         </div>
         <div className="grid lg:grid-cols-3 gap-8">
@@ -110,13 +138,21 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center ml-4">
                   <Terminal className="w-4 h-4 mr-2 text-foreground/60" />
-                  <span className="text-sm text-foreground/60 font-mono">contact.js</span>
+                  <span className="text-sm text-foreground/60 font-mono">
+                    contact.js
+                  </span>
                 </div>
               </div>
               <div className="p-6 font-mono text-left">
-                <div className="text-green-400 mb-2">$ npm run contact-developer</div>
-                <div className="text-foreground/80 mb-2">✓ Developer available</div>
-                <div className="text-foreground/80 mb-2">✓ Chai level: High</div>
+                <div className="text-green-400 mb-2">
+                  $ npm run contact-developer
+                </div>
+                <div className="text-foreground/80 mb-2">
+                  ✓ Developer available
+                </div>
+                <div className="text-foreground/80 mb-2">
+                  ✓ Chai level: High
+                </div>
                 <div className="text-foreground/80 mb-2">✓ Ready to code</div>
                 <div className="text-primary animate-pulse">▋</div>
               </div>
@@ -127,19 +163,32 @@ const Contact = () => {
               <h3 className="text-xl font-bold mb-6 font-mono">Get in Touch</h3>
               <div className="space-y-4">
                 {contactInfo.map((info, index) => (
-                      <a href={info.link} key={index} className="flex items-start space-x-4" target="_blank">
-
-                    <div key={info.label} className="flex items-start space-x-4">
-                    <div className="text-primary p-2 glass rounded-lg">
-                      {info.icon}
+                  <a
+                    href={info.link}
+                    key={index}
+                    className="flex items-start space-x-4"
+                    target="_blank"
+                  >
+                    <div
+                      key={info.label}
+                      className="flex items-start space-x-4"
+                    >
+                      <div className="text-primary p-2 glass rounded-lg">
+                        {info.icon}
+                      </div>
+                      <div>
+                        <p className="text-foreground/60 text-sm">
+                          {info.label}
+                        </p>
+                        <p className="text-foreground font-medium">
+                          {info.value}
+                        </p>
+                        <p className="text-foreground/50 text-xs">
+                          {info.subtext}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-foreground/60 text-sm">{info.label}</p>
-                      <p className="text-foreground font-medium">{info.value}</p>
-                      <p className="text-foreground/50 text-xs">{info.subtext}</p>
-                    </div>
-                  </div>
-                    </a>
+                  </a>
                 ))}
               </div>
             </div>
@@ -149,9 +198,18 @@ const Contact = () => {
               <h3 className="text-xl font-bold mb-4 font-mono">Availability</h3>
               <div className="space-y-3">
                 {availability.map((item) => (
-                  <div key={item.label} className="flex items-center justify-between">
-                    <span className="text-foreground/80 text-sm">{item.label}</span>
-                    <div className={`w-3 h-3 rounded-full ${item.available ? 'bg-green-400' : 'bg-red-400'}`}></div>
+                  <div
+                    key={item.label}
+                    className="flex items-center justify-between"
+                  >
+                    <span className="text-foreground/80 text-sm">
+                      {item.label}
+                    </span>
+                    <div
+                      className={`w-3 h-3 rounded-full ${
+                        item.available ? "bg-green-400" : "bg-red-400"
+                      }`}
+                    ></div>
                   </div>
                 ))}
               </div>
@@ -165,15 +223,19 @@ const Contact = () => {
                   <a
                     key={social.label}
                     href={social.href}
-                    target='_blank'
+                    target="_blank"
                     className="flex items-center space-x-3 p-3 glass rounded-lg hover:scale-105 transition-all duration-300 group"
                   >
                     <div className="text-primary group-hover:scale-110 transition-transform duration-300">
                       {social.icon}
                     </div>
                     <div>
-                      <div className="text-foreground font-medium">{social.label}</div>
-                      <div className="text-foreground/60 text-sm font-mono">{social.handle}</div>
+                      <div className="text-foreground font-medium">
+                        {social.label}
+                      </div>
+                      <div className="text-foreground/60 text-sm font-mono">
+                        {social.handle}
+                      </div>
                     </div>
                   </a>
                 ))}
@@ -186,13 +248,18 @@ const Contact = () => {
             <div className="glass-card p-8 rounded-2xl animate-fade-in">
               <div className="flex items-center mb-6">
                 <Code className="w-6 h-6 mr-3 text-primary" />
-                <h3 className="text-2xl font-bold font-mono">Let&apos;s Build Something</h3>
+                <h3 className="text-2xl font-bold font-mono">
+                  Let&apos;s Build Something
+                </h3>
               </div>
-              
-              <form  ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground/80 font-mono">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium mb-2 text-foreground/80 font-mono"
+                    >
                       Name *
                     </label>
                     <input
@@ -207,7 +274,10 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground/80 font-mono">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium mb-2 text-foreground/80 font-mono"
+                    >
                       Email *
                     </label>
                     <input
@@ -224,7 +294,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2 text-foreground/80 font-mono">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium mb-2 text-foreground/80 font-mono"
+                  >
                     Subject *
                   </label>
                   <input
@@ -240,7 +313,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground/80 font-mono">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium mb-2 text-foreground/80 font-mono"
+                  >
                     Message *
                   </label>
                   <textarea
