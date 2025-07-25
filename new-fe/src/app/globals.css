@@ -112,7 +112,6 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-
 @layer base {
   * {
     @apply border-border;
@@ -121,7 +120,7 @@
   body {
     @apply bg-gradient-to-br from-slate-50 via-cyan-50 to-slate-50 text-foreground transition-all duration-300;
     min-height: 100vh;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
   }
 
   .dark body {
@@ -133,8 +132,10 @@
   }
 
   /* Code and terminal styling */
-  code, pre {
-    font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', monospace;
+  code,
+  pre {
+    font-family: "JetBrains Mono", "Fira Code", "Monaco", "Cascadia Code",
+      monospace;
   }
 }
 
@@ -200,7 +201,8 @@
   --animate-blink: blink 1s step-start infinite;
 
   @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0px) rotate(0deg);
     }
     50% {
@@ -209,7 +211,8 @@
   }
 
   @keyframes glow {
-    0%, 100% {
+    0%,
+    100% {
       opacity: 1;
       box-shadow: 0 0 20px rgba(29, 191, 189, 0.3);
     }
@@ -242,17 +245,16 @@
   }
 
   @keyframes blink {
-    0%, 50% {
+    0%,
+    50% {
       opacity: 1;
     }
-    51%, 100% {
+    51%,
+    100% {
       opacity: 0;
     }
   }
 }
-
-
-
 
 .skill-modal-card {
   background: rgba(255, 255, 255, 0.85);
@@ -285,9 +287,6 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
-
-
-
 /* Glass morphism utilities */
 .glass {
   background: rgba(255, 255, 255, 0.1);
@@ -310,13 +309,19 @@
 
 /* Developer-specific animations */
 .terminal-cursor::after {
-  content: '▋';
+  content: "▋";
   animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Custom utility classes */
@@ -346,7 +351,7 @@
   color: #f59e0b;
 }
 
-.syntax-comment { 
+.syntax-comment {
   color: #6b7280;
   font-style: italic;
 }

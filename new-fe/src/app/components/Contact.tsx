@@ -325,7 +325,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={6}
-                    className="w-full px-4 py-3 glass rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background/20 text-foreground placeholder-foreground/50 resize-none font-mono"
+                    className="w-full px-4 py-3 glass rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background/20  text-foreground placeholder-foreground/50 resize-none font-mono"
                     placeholder="Tell me about your project..."
                     required
                   ></textarea>
